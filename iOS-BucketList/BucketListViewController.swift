@@ -35,7 +35,6 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         print("Selected")
     }
     
@@ -47,17 +46,18 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
     }
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        performSegue(withIdentifier: "EditItemSegue", sender: indexPath)
+        performSegue(withIdentifier: "AddEditItemSegue", sender: indexPath)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(sender!)
         
-        if segue.identifier == "AddItemSegue" {
+        if (sender as? UIBarButtonItem) != nil {
             let navigationController = segue.destination as! UINavigationController
             let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
             addItemTableViewController.delegate = self
             
-        } else if segue.identifier == "EditItemSegue" {
+        } else if (sender as? NSIndexPath) != nil {
             let navigationController = segue.destination as! UINavigationController
             let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
             addItemTableViewController.delegate = self
@@ -67,7 +67,6 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
             addItemTableViewController.item = item
             addItemTableViewController.indexPath = indexPath
         }
-        
     }
     
     func cancelButtonPressed(by controller: AddItemTableViewController) {
@@ -84,6 +83,5 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
         tableView.reloadData()
         dismiss(animated: true, completion: nil)
     }
-    
 }
 

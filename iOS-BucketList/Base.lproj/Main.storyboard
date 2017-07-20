@@ -35,13 +35,10 @@
                     <navigationItem key="navigationItem" title="Bucket List" id="Gbl-Ih-m91">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="GcS-4J-u5Y">
                             <connections>
-                                <segue destination="oRw-hN-cei" kind="presentation" identifier="AddItemSegue" id="1AT-Ig-cUk"/>
+                                <segue destination="oRw-hN-cei" kind="presentation" identifier="AddEditItemSegue" id="1AT-Ig-cUk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="oRw-hN-cei" kind="presentation" identifier="EditItemSegue" id="euf-HK-i1R"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ff-jt-JIv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -69,7 +66,7 @@
                                                     <rect key="frame" x="8" y="7" width="359" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -145,7 +142,4 @@
             <point key="canvasLocation" x="1820" y="125.4872563718141"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="1AT-Ig-cUk"/>
-    </inferredMetricsTieBreakers>
 </document>
